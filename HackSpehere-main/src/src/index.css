@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 142 100% 50%;
+    --card: 0 0% 0%;
+    --card-foreground: 142 100% 50%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 142 100% 50%;
+    --primary: 142 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 142 100% 50%;
+    --muted: 142 100% 30%;
+    --muted-foreground: 0 0% 100%;
+    --accent: 142 100% 40%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 0%;
+    --border: 142 100% 30%;
+    --input: 142 100% 30%;
+    --ring: 142 100% 50%;
+    --radius: 0.75rem;
+    --border-color: #03DAC6; /* teal-500 */
+    --ring-color: #03DAC6; /* teal-500 */
+    --text-color: #03DAC6; /* teal-500 */
+    --font-primary: "Orbitron", sans-serif;
+    --font-secondary: "Montserrat", sans-serif;
+    --font-tertiary: "Nunito Sans", sans-serif;
+    --font-quaternary: "Raleway", sans-serif;
+    	
+    --sidebar-background: 0 0% 98%;
+ 
+    --sidebar-foreground: 240 5.3% 26.1%;
+ 
+    --sidebar-primary: 240 5.9% 10%;
+ 
+    --sidebar-primary-foreground: 0 0% 98%;
+ 
+    --sidebar-accent: 240 4.8% 95.9%;
+ 
+    --sidebar-accent-foreground: 240 5.9% 10%;
+ 
+    --sidebar-border: 220 13% 91%;
+ 
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  body {
+    font-family: var(--font-primary);
+  }
+
+  .font-secondary {
+    font-family: var(--font-secondary);
+  }
+
+  .font-tertiary {
+    font-family: var(--font-tertiary);
+  }
+
+  .font-quaternary {
+    font-family: var(--font-quaternary);
+  }
+
+  * {
+    @apply border-border antialiased;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.bg-grid-pattern {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 255, 163, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(0, 255, 163, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.glow {
+  box-shadow: 0 0 20px rgba(0, 255, 163, 0.3), 0 0 40px rgba(0, 255, 163, 0.2),
+    0 0 60px rgba(0, 255, 163, 0.1);
+}
+.border-input{
+  border-color: var(--border-color);
+  color:white;
+}
+.text-foreground{
+  color:white;
+}
+.border{
+   border-color: #14b8a6;
+}
+@layer utilities {
+  .perspective {
+    perspective: 1000px;
+  }
+  
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .backface-visible {
+    backface-visibility: visible !important;
+    pointer-events: auto !important;
+  }
+  
+  
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
+  
+
+
+@layer utilities {
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .rotate-y-20 {
+    transform: rotateY(20deg);
+  }
+  
+  .translate-z-5 {
+    transform: translateZ(5px);
+  }
+  
+  .translate-z-10 {
+    transform: translateZ(10px);
+  }
+  
+  .translate-z-20 {
+    transform: translateZ(20px);
+  }
+  
+  .translate-z-30 {
+    transform: translateZ(30px);
+  }
+}
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
